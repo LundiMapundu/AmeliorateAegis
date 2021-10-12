@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lundi Mapundu\\source\\repos\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj": {}
+    "C:\\Users\\s217161227\\Desktop\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lundi Mapundu\\source\\repos\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj": {
+    "C:\\Users\\s217161227\\Desktop\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lundi Mapundu\\source\\repos\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj",
+        "projectUniqueName": "C:\\Users\\s217161227\\Desktop\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj",
         "projectName": "AmeliorateAegis",
-        "projectPath": "C:\\Users\\Lundi Mapundu\\source\\repos\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj",
-        "packagesPath": "C:\\Users\\Lundi Mapundu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lundi Mapundu\\source\\repos\\AmeliorateAegis\\AmeliorateAegis\\obj\\",
+        "projectPath": "C:\\Users\\s217161227\\Desktop\\AmeliorateAegis\\AmeliorateAegis\\AmeliorateAegis.csproj",
+        "packagesPath": "C:\\Users\\s217161227\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\s217161227\\Desktop\\AmeliorateAegis\\AmeliorateAegis\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lundi Mapundu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\s217161227\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -51,6 +50,10 @@
               "target": "Package",
               "version": "[1.1.0, )"
             },
+            "Microsoft.AspNet.WebApi": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.19, )"
@@ -74,6 +77,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "iTextSharp.LGPLv2.Core": {
+              "target": "Package",
+              "version": "[1.7.5, )"
             }
           },
           "imports": [
@@ -94,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

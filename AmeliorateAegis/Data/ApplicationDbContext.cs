@@ -28,6 +28,12 @@ namespace AmeliorateAegis.Data
         public DbSet<ProgressReport> ProgressReports { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
+        public DbSet<Regional> Regionals { get; set; }
+        public DbSet<Financial> Financials { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
+
+        public DbSet<Meeting> Meetings { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

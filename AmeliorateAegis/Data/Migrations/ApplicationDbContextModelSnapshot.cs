@@ -73,7 +73,7 @@ namespace AmeliorateAegis.Data.Migrations
                             Id = 1L,
                             AddressLine1 = "123 John Newton SW",
                             AddressLine2 = "Newton Park",
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 319, DateTimeKind.Local).AddTicks(3914),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 824, DateTimeKind.Local).AddTicks(9723),
                             Name = "Kabega"
                         },
                         new
@@ -81,7 +81,7 @@ namespace AmeliorateAegis.Data.Migrations
                             Id = 2L,
                             AddressLine1 = "237 John Newton SW",
                             AddressLine2 = "New Brighton",
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 321, DateTimeKind.Local).AddTicks(7962),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 825, DateTimeKind.Local).AddTicks(8827),
                             Name = "Sol Futi"
                         },
                         new
@@ -89,9 +89,47 @@ namespace AmeliorateAegis.Data.Migrations
                             Id = 3L,
                             AddressLine1 = "123 John Newton SW",
                             AddressLine2 = "Newton Park",
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 321, DateTimeKind.Local).AddTicks(8043),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 825, DateTimeKind.Local).AddTicks(8924),
                             Name = "Daku"
                         });
+                });
+
+            modelBuilder.Entity("AmeliorateAegis.Models.Financial", b =>
+                {
+                    b.Property<int>("FinancialId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Day")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prov")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("centerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("regionCost")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("totalAmount")
+                        .HasColumnType("float");
+
+                    b.HasKey("FinancialId");
+
+                    b.ToTable("Financials");
                 });
 
             modelBuilder.Entity("AmeliorateAegis.Models.LessonPlan", b =>
@@ -129,6 +167,28 @@ namespace AmeliorateAegis.Data.Migrations
                     b.ToTable("LessonPlans");
                 });
 
+            modelBuilder.Entity("AmeliorateAegis.Models.Meeting", b =>
+                {
+                    b.Property<int>("MeetingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MeetingID");
+
+                    b.ToTable("Meetings");
+                });
+
             modelBuilder.Entity("AmeliorateAegis.Models.Parent", b =>
                 {
                     b.Property<long>("Id")
@@ -162,8 +222,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 1L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(3001),
-                            DoB = new DateTime(1994, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(4999),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(7893),
+                            DoB = new DateTime(1994, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(8894),
                             FirstName = "Jane",
                             LastName = "Pope"
                         },
@@ -171,8 +231,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 2L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6300),
-                            DoB = new DateTime(1988, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6352),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9426),
+                            DoB = new DateTime(1988, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9458),
                             FirstName = "Thembeka",
                             LastName = "Qweba"
                         },
@@ -180,8 +240,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 3L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6393),
-                            DoB = new DateTime(1976, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6396),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9485),
+                            DoB = new DateTime(1976, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9487),
                             FirstName = "Jane",
                             LastName = "Doe"
                         },
@@ -189,8 +249,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 4L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6399),
-                            DoB = new DateTime(1967, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6401),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9489),
+                            DoB = new DateTime(1967, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9490),
                             FirstName = "Jon",
                             LastName = "Doe"
                         },
@@ -198,8 +258,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 5L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6404),
-                            DoB = new DateTime(1992, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6406),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9492),
+                            DoB = new DateTime(1992, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9493),
                             FirstName = "Joshua",
                             LastName = "Doe"
                         },
@@ -207,8 +267,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 6L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6408),
-                            DoB = new DateTime(1972, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6410),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9495),
+                            DoB = new DateTime(1972, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9496),
                             FirstName = "Thandi",
                             LastName = "Newton"
                         },
@@ -216,8 +276,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 7L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6413),
-                            DoB = new DateTime(1996, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6414),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9497),
+                            DoB = new DateTime(1996, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9498),
                             FirstName = "Amanda",
                             LastName = "Qweba"
                         },
@@ -225,8 +285,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 8L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6417),
-                            DoB = new DateTime(2000, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6419),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9499),
+                            DoB = new DateTime(2000, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9500),
                             FirstName = "Amyoli",
                             LastName = "Soze"
                         },
@@ -234,8 +294,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 9L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6421),
-                            DoB = new DateTime(1991, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6423),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9502),
+                            DoB = new DateTime(1991, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9503),
                             FirstName = "Jongokhaya",
                             LastName = "Khwili"
                         },
@@ -243,8 +303,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 10L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6425),
-                            DoB = new DateTime(1989, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(6427),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9505),
+                            DoB = new DateTime(1989, 10, 12, 14, 10, 45, 826, DateTimeKind.Local).AddTicks(9506),
                             FirstName = "Thandeka",
                             LastName = "Khehle"
                         });
@@ -271,27 +331,72 @@ namespace AmeliorateAegis.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(7605),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(115),
                             Name = "Term 1"
                         },
                         new
                         {
                             Id = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(9068),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(787),
                             Name = "Term 2"
                         },
                         new
                         {
                             Id = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(9109),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(809),
                             Name = "Term 3"
                         },
                         new
                         {
                             Id = 4L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 323, DateTimeKind.Local).AddTicks(9112),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(811),
                             Name = "Term 4"
                         });
+                });
+
+            modelBuilder.Entity("AmeliorateAegis.Models.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DOB")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FullNames")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Occupation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhysicalAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePicture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("AmeliorateAegis.Models.Programme", b =>
@@ -324,35 +429,35 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 1L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(8500),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5694),
                             Name = "Literacy Development"
                         },
                         new
                         {
                             Id = 2L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 325, DateTimeKind.Local).AddTicks(219),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(6618),
                             Name = "Math And Science"
                         },
                         new
                         {
                             Id = 3L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 325, DateTimeKind.Local).AddTicks(263),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(6646),
                             Name = "Song And Music"
                         },
                         new
                         {
                             Id = 4L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 325, DateTimeKind.Local).AddTicks(267),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(6648),
                             Name = "Art And Music"
                         },
                         new
                         {
                             Id = 5L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 325, DateTimeKind.Local).AddTicks(270),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(6649),
                             Name = "Language And Speech"
                         });
                 });
@@ -480,8 +585,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 1L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(3750),
-                            DoB = new DateTime(2016, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(5436),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(3318),
+                            DoB = new DateTime(2016, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(4139),
                             FirstName = "Peter",
                             LastName = "Pope",
                             ParentId = 1L,
@@ -491,8 +596,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 2L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7114),
-                            DoB = new DateTime(2017, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7172),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5009),
+                            DoB = new DateTime(2017, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5047),
                             FirstName = "Amahle",
                             LastName = "Qweba",
                             ParentId = 2L,
@@ -502,8 +607,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 3L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7210),
-                            DoB = new DateTime(2016, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7212),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5077),
+                            DoB = new DateTime(2016, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5079),
                             FirstName = "Junior",
                             LastName = "Doe",
                             ParentId = 3L,
@@ -513,8 +618,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 4L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7216),
-                            DoB = new DateTime(2017, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7218),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5081),
+                            DoB = new DateTime(2017, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5082),
                             FirstName = "Jerry",
                             LastName = "Doe",
                             ParentId = 4L,
@@ -524,8 +629,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 5L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7220),
-                            DoB = new DateTime(2015, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7222),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5084),
+                            DoB = new DateTime(2015, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5085),
                             FirstName = "JJ",
                             LastName = "Doe",
                             ParentId = 5L,
@@ -535,8 +640,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 6L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7224),
-                            DoB = new DateTime(2017, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7225),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5087),
+                            DoB = new DateTime(2017, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5088),
                             FirstName = "Mihle",
                             LastName = "Newton",
                             ParentId = 6L,
@@ -546,8 +651,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 7L,
                             CentreId = 2L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7228),
-                            DoB = new DateTime(2016, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7229),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5089),
+                            DoB = new DateTime(2016, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5090),
                             FirstName = "Sinazo",
                             LastName = "Qweba",
                             ParentId = 7L,
@@ -557,8 +662,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 8L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7232),
-                            DoB = new DateTime(2015, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7233),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5092),
+                            DoB = new DateTime(2015, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5093),
                             FirstName = "Buhle",
                             LastName = "Soze",
                             ParentId = 8L,
@@ -568,8 +673,8 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 9L,
                             CentreId = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7235),
-                            DoB = new DateTime(2017, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7237),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5095),
+                            DoB = new DateTime(2017, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5096),
                             FirstName = "Khaya",
                             LastName = "Khwili",
                             ParentId = 9L,
@@ -579,13 +684,42 @@ namespace AmeliorateAegis.Data.Migrations
                         {
                             Id = 10L,
                             CentreId = 3L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7239),
-                            DoB = new DateTime(2016, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(7240),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5097),
+                            DoB = new DateTime(2016, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(5098),
                             FirstName = "Kubeka",
                             LastName = "Khehle",
                             ParentId = 10L,
                             TeacherId = 1L
                         });
+                });
+
+            modelBuilder.Entity("AmeliorateAegis.Models.Regional", b =>
+                {
+                    b.Property<int>("RegionalId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("RegionalId");
+
+                    b.ToTable("Regionals");
                 });
 
             modelBuilder.Entity("AmeliorateAegis.Models.Teacher", b =>
@@ -618,8 +752,8 @@ namespace AmeliorateAegis.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreationTime = new DateTime(2021, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(196),
-                            DoB = new DateTime(1976, 10, 10, 20, 24, 15, 324, DateTimeKind.Local).AddTicks(1845),
+                            CreationTime = new DateTime(2021, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(1390),
+                            DoB = new DateTime(1976, 10, 12, 14, 10, 45, 827, DateTimeKind.Local).AddTicks(2292),
                             FirstName = "Margaret",
                             LastName = "Van Hum",
                             Qualification = "Bachelor Of Education In Child Development"
